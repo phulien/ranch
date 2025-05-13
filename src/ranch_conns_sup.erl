@@ -483,6 +483,8 @@ report_error(_, _, _, _, shutdown) ->
 	ok;
 report_error(_, _, _, _, {shutdown, _}) ->
 	ok;
+report_error(_, _, _, _, killed) ->
+	ok;
 report_error(Logger, Ref, Protocol, Pid, Reason) ->
 	ranch:log(error,
 		"Ranch listener ~p had connection process started with "
